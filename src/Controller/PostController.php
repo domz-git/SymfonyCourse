@@ -6,6 +6,7 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,6 +38,7 @@ class PostController extends AbstractController
     /**
      * @Route("/create", name="create")
      * @param Request $request
+     * @return RedirectResponse|Response
      */
     public function create(Request $request){
 
@@ -85,6 +87,7 @@ class PostController extends AbstractController
     /**
      * @Route("/remove/{id}", name="remove")
      * @param Post $post
+     * @return RedirectResponse
      */
     public function remove(Post $post){
 
